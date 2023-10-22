@@ -98,19 +98,30 @@
 
 /////////////////////////////////////////////////////////////////////
 // ÖDEV // kullanıcı tarafından girilen bir kelimenin (prompt)
-// let userData= prompt("Lütfen bir şeyler yazınız")  ;
+let userData= prompt("Lütfen bir şeyler yazınız");
 // S-1) Kaç karakterlidir ? (length)
+console.log("Promt Length: "+userData.length);
 // S-2) boşluklar alınarak Kaç karakterlidir ? (trim)
+console.log("Promt Trim Length: "+userData.trim().length);
 // S-3) bütün kelimeyi küçük harfle göstermek ? (toLowerCase())
+console.log("Promt ToLowerCase: "+userData.toLowerCase());
 // S-4) bütün kelimeyi büyük harfle göstermek ? (toUpperCase());
+console.log("Promt ToUpperCase: "+userData.toUpperCase());
 // S-5) Kullanıcıdan alınan ilk kelimeyle , "javascript" kelimeyle değiştirin. (replace, substring, indexOf)
+console.log("Promt Replace: "+userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
+
 // console.log(userData.replace("xxxxxxx"),"javascript");
 // console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
 // S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith()) 
+console.log("Is Promt StartsWith 'javascript': "+userData.startsWith("javascript"));
 // S-7) yazdığınız kelimede "javascript ile mi bitiyor" ? (endsWith())
+console.log("Is Promt EndsWith 'javascript': "+userData.endsWith("javascript"));
 // S-8) ilk harf nedir  ? (charAt())
+console.log("Promt CharAt 0 : "+userData.charAt(0));
 // S-9) girdiğiniz kelimenin sonuna "-ben js öğreniyorum" (concat())
+console.log("Promt Concat: "+userData.concat(" -ben js öğreniyorum"));
 // S-10) girdiğiniz 0 ile 4 arasındaki indexi ekranda gösterin? (subString())
+console.log("Promt Substring(0-4): "+userData.substring(0,4));
 
 // Örnek
 // 1.YOL normal diziyle yapalım.
@@ -150,7 +161,10 @@
 
 // ÖDEV 
 // kullanıcıdan aldığımız isim soyisim (boşluk var)
+let userNameSurname = prompt("Lütfen isim ve soyisminizi giriniz");
 // ilk karakter göstersin sonraki kelimeleri masking (maskeleme yapsın)
+let userName = userNameSurname.substring(0, 1).toUpperCase() + userNameSurname.substring(1, userNameSurname.indexOf(" ")).replace(userNameSurname.substring(1, userNameSurname.indexOf(" ")), "****") + " " + userNameSurname.substring(userNameSurname.indexOf(" ") + 1, userNameSurname.indexOf(" ") + 2).toUpperCase() + userNameSurname.substring(userNameSurname.indexOf(" ") + 2, userNameSurname.length).replace(userNameSurname.substring(userNameSurname.indexOf(" ") + 2, userNameSurname.length), "****");
+console.log(userName);
 // eğer kullanıcı isim ve soyisimi ilk karakteri küçük girmişse büyük olsun mutlaka
 // Hamit Mızrak
 // H**** MIZ***
